@@ -45,3 +45,18 @@
   background: rgb(9, 107, 9);
   color: #b41c4c;
 }
+
+/* Marquee animation - scroll from right to left */
+@keyframes marquee-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-right-to-left {
+  animation: marquee-right-to-left 20s linear infinite;
+  white-space: nowrap;
+}

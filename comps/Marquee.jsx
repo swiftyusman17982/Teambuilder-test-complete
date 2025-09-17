@@ -10,10 +10,14 @@ const Marquee = ({ products }) => {
         You may also like
       </h1>
 
-      <section className=" mt-10 relative h-52 sm:h-96  w-full  overflow-hidden">
-        <div className={`flex justify-center flex-row-reverse`}>
+      <section className=" mt-10 relative h-52 sm:h-96 w-full overflow-hidden">
+        <div className="flex animate-marquee-right-to-left">
           {products.map((product) => (
-            <Products gap={"ml-5"} key={product._id} products={product} />
+            <Products gap={"mr-5"} key={product._id} products={product} />
+          ))}
+          {/* Duplicate for seamless loop */}
+          {products.map((product) => (
+            <Products gap={"mr-5"} key={`duplicate-${product._id}`} products={product} />
           ))}
         </div>
       </section>
