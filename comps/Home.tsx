@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { BannerDataTypes, ProductsTypes } from "../app/page";
 import FooterBanner from "../comps/FooterBanner";
 import MainBanner from "./MainBanner";
@@ -11,6 +11,22 @@ interface HomeProps {
 }
 
 const Home = ({ products, bannerData }: HomeProps) => {
+  const [sortBy, setSortBy] = useState<string>("");
+
+  const sortedProducts = useMemo(() => {
+    if (!sortBy) return products;
+    
+    const sorted = [...products].sort((a, b) => {
+      if (sortBy === "low-to-high") {
+        return a.price - b.price;
+      } else if (sortBy === "high-to-low") {
+        return b.price - a.price;
+      }
+      return 0;
+    });
+    
+    return sorted;
+  }, [products, sortBy]);
 
   return (
     <main>
@@ -24,17 +40,29 @@ const Home = ({ products, bannerData }: HomeProps) => {
         >
           Best Selling Headphones
         </h1>
-        {/* <p className=" text-base text-secondary">Best in the Market</p> */}
+        
+        {/* === SORT DROPDOWN  */}
+        <div className="mt-4">
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="">Sort by Price</option>
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
+          </select>
+        </div>
       </section>
 
       {/* === SHOW PRODUCTS  */}
       <section
-        className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4
+        className=" grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3
        lg:mx-20 overflow-hidden
       "
       >
         {/* === MAP PRODUCTS  */}
-        {products?.map((products: ProductsTypes) => {
+        {sortedProducts?.map((products: ProductsTypes) => {
           return <Products key={products._id} products={products} />;
         })}
       </section>
