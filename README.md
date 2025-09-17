@@ -38,15 +38,3 @@
 
 3. Open http://localhost:3000 in your browser
 
-## Technical Implementation
-
-- **Sorting**: Implemented using React `useMemo` for performance
-- **Price Formatting**: Created `formatToJPY` utility function using `toLocaleString`
-- **Layout**: Updated Tailwind CSS grid classes
-- **RTL Flow**: Used `flex-row-reverse` for horizontal product list
-
-## Submission Requirements
-- ✅ Source Code: Available in this repository
-- ⏳ Execution Video: Ready to be recorded (max 60 seconds)
-
-All tasks completed within the 20-minute time limit!
