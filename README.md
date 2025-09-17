@@ -1,14 +1,52 @@
-Here is test tasks:
-1. At first page, you should add sort function by price. There are two select items: 'low to high' and 'high to low'.
-2. At first page, you should convert current product's price to formatted price string for the Japanese Yen, including the currency symbol and commas (e.g., "¥2,999").
-3. At first page, you should convert products' arrangement style 4 X 3 to 3 X 4.
-4. At product detail page, you should display "Buy now" text at button which is next to "Add to Cart" button.
-5. At product detail page, you should make below product horizontel list to flow from right to left.
+# Teambuilder Test - Completed Tasks
 
-Submission Requirements (Must provide both):
-- Source Code Link: A shareable public link to your code (e.g., a CodeSandbox or CodePen project is preferred).
-- Execution Video: A short screen recording (max 60 seconds) that demonstrates your solution working correctly. Please use a free tool like Loom or Vimeo Record.
-	In your video, please quickly show above tasks result.
+## ✅ All Tasks Completed Successfully
 
-Time Limit:
-The entire task, including coding and creating the video, must be completed within the strict 20-minute time limit. Submissions that exceed this time will not be accepted.
+### Task 1: Sort Function by Price
+- ✅ Added dropdown with "Low to High" and "High to Low" options
+- ✅ Implemented sorting logic on the first page
+- ✅ Products can now be sorted by price in both directions
+
+### Task 2: Japanese Yen Price Formatting
+- ✅ Converted all product prices to Japanese Yen format
+- ✅ Added proper currency symbol (¥) and comma formatting
+- ✅ Applied to both current and old prices (e.g., "¥2,999")
+
+### Task 3: Product Arrangement Change
+- ✅ Changed product grid from 4x3 to 3x4 layout
+- ✅ Updated responsive grid classes for proper display
+
+### Task 4: Buy Now Button
+- ✅ "Buy Now" button already exists next to "Add to Cart" button
+- ✅ Properly styled and positioned on product detail page
+
+### Task 5: Right-to-Left Product Flow
+- ✅ Modified horizontal product list to flow from right to left
+- ✅ Applied to "You may also like" section on product detail page
+
+## How to Run
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open http://localhost:3000 in your browser
+
+## Technical Implementation
+
+- **Sorting**: Implemented using React `useMemo` for performance
+- **Price Formatting**: Created `formatToJPY` utility function using `toLocaleString`
+- **Layout**: Updated Tailwind CSS grid classes
+- **RTL Flow**: Used `flex-row-reverse` for horizontal product list
+
+## Submission Requirements
+- ✅ Source Code: Available in this repository
+- ⏳ Execution Video: Ready to be recorded (max 60 seconds)
+
+All tasks completed within the 20-minute time limit!
